@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
 import './Form.css';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -40,7 +40,7 @@ function Login() {
   };
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="form-page">
         <div className="form-card">
           <h2>Welcome Back</h2>

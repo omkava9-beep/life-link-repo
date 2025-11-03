@@ -1,12 +1,17 @@
 import React from 'react';
-import './Footer.css';
+import { motion } from 'framer-motion';
 
-function Footer() {
+function FadeIn({ children, delay = 0 }) {
   return (
-    <footer className="footer-container">
-      <p>© 2025 LifeLink | Connecting Hearts, Saving Lives ❤️</p>
-    </footer>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: delay, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
-export default Footer;
+export default FadeIn;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api';
 import './Form.css';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 
 function Register() {
   const [name, setName] = useState('');
@@ -46,7 +46,7 @@ function Register() {
   };
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="form-page">
         <div className="form-card">
           <h2>Create Account</h2>

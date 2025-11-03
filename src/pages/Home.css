@@ -119,10 +119,19 @@
 
 /* --- SHARED SECTION STYLING --- */
 .how-it-works, .about-snippet {
-  padding: 80px 20px;
+  padding: 80px 0; /* Use padding on the section */
   text-align: center;
   border-top: 1px solid var(--border-glass);
 }
+/* This part was changed */
+.about-snippet {
+  background: var(--bg-glass);
+  padding: 80px 0; /* Ensures full width bg */
+}
+.about-snippet-content {
+  max-width: 800px;
+}
+/* End of change */
 
 .section-title {
   font-size: 2.5rem;
@@ -147,7 +156,6 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -187,13 +195,6 @@
   line-height: 1.6;
 }
 
-.about-snippet {
-  background: var(--bg-glass);
-}
-.about-snippet-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
 .about-snippet p {
   font-size: 1.2rem;
   color: var(--text-muted);

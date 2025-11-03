@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import './Form.css';
 import './OrganForm.css';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 
 function OrganForm() {
   const { isLoggedIn, user } = useAuth();
@@ -61,7 +61,7 @@ function OrganForm() {
   };
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="page-container">
         <div className="form-card organ-form-card">
           <h2>Organ Donation Pledge</h2>

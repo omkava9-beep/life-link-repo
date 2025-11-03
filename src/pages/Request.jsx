@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
 import './Form.css';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 
 function Request() {
   const [requestType, setRequestType] = useState('');
@@ -47,7 +47,7 @@ function Request() {
   };
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="form-page">
         <div className="form-card">
           <h2>Request Help</h2>

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
 import './Form.css';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 
 function Donate() {
   const [donationType, setDonationType] = useState('');
@@ -50,7 +50,7 @@ function Donate() {
   };
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="form-page">
         <div className="form-card">
           <h2>Donation Form</h2>

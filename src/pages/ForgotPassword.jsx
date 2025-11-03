@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../api';
 import './Form.css';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -31,7 +31,7 @@ function ForgotPassword() {
   };
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="form-page">
         <div className="form-card">
           <h2>Forgot Password?</h2>

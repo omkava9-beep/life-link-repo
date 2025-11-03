@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import './MyProfile.css';
 import { Link } from 'react-router-dom';
 import { FaBoxOpen, FaHandHoldingHeart } from 'react-icons/fa';
-import PageLayout from '../components/PageLayout'; // Import PageLayout
+import PageLayout from '../components/PageLayout';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function MyProfile() {
@@ -47,7 +47,7 @@ function MyProfile() {
   }
 
   return (
-    <PageLayout> {/* Wrap content */}
+    <PageLayout>
       <div className="page-container">
         <h1 className="page-title">Welcome, <span>{user?.name}</span></h1>
         

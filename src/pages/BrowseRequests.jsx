@@ -3,13 +3,13 @@ import api from '../api';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import './Browse.css';
-import { FaMapMarkerAlt, FaUser, FaPhone } from 'react-icons/fa'; // Changed icon back to FaPhone
-import PageLayout from '../components/PageLayout';
+import { FaMapMarkerAlt, FaUser, FaPhone } from 'react-icons/fa';
+import PageLayout from '../components/PageLayout'; // <-- This was the fix
 
 // Card component
 function RequestCard({ request }) {
   const { isLoggedIn, user } = useAuth();
-  const [showContact, setShowContact] = useState(false); // Re-added state
+  const [showContact, setShowContact] = useState(false);
   
   const getDetail = () => {
     if (request.requestType === 'blood') {
@@ -36,7 +36,7 @@ function RequestCard({ request }) {
         <p className="card-info"><FaMapMarkerAlt /> {request.location}</p>
         <p className="card-date">Posted: {new Date(request.createdAt).toLocaleDateString()}</p>
         
-        {/* Reverted Contact Section */}
+        {/* "Show Contact" logic */}
         <div className="contact-section">
           {isLoggedIn && user._id !== request.user ? (
             !showContact ? (
