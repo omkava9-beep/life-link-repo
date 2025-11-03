@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'; // <-- 1. IMPORT FOOTER
+import Footer from './components/Footer'; 
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
@@ -14,7 +14,6 @@ import MyProfile from './pages/MyProfile';
 import BrowseDonations from './pages/BrowseDonations';
 import BrowseRequests from './pages/BrowseRequests';
 
-// This component handles the page transitions
 function AppRoutes() {
   const location = useLocation();
   return (
@@ -40,10 +39,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main> {/* Wrap routes in main tag for clarity */}
+      <main> 
         <AppRoutes />
       </main>
-      <Footer /> {/* <-- 2. ADD GLOBAL FOOTER HERE (ONLY ONCE) */}
+      <Footer />
     </BrowserRouter>
   );
 }
