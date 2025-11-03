@@ -1,0 +1,211 @@
+/* --- KEYFRAME ANIMATIONS --- */
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- HERO SECTION STYLES --- */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - 80px);
+  color: var(--text-light);
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* "AURORA" BACKGROUND */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  background: 
+    radial-gradient(at 20% 20%, rgba(var(--accent-green-rgb), 0.25) 0px, transparent 50%),
+    radial-gradient(at 80% 30%, rgba(var(--accent-blue-rgb), 0.2) 0px, transparent 50%),
+    radial-gradient(at 70% 80%, rgba(var(--accent-red-rgb), 0.2) 0px, transparent 50%),
+    radial-gradient(at 30% 70%, rgba(var(--accent-green-rgb), 0.2) 0px, transparent 50%);
+  background-size: 300% 300%;
+  animation: aurora 20s ease infinite;
+  filter: blur(70px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 4.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: -1px;
+}
+.hero-title span {
+  color: var(--accent-green);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 35px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- BUTTON STYLES --- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.5s ease;
+}
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary-hero {
+  background: var(--accent-green);
+  color: var(--bg-dark-primary);
+  border-color: var(--accent-green);
+}
+.btn-primary-hero:hover {
+  background: var(--accent-green-dark);
+  border-color: var(--accent-green-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--glow-green);
+}
+
+.btn-secondary-hero {
+  background: var(--accent-red);
+  color: var(--text-light);
+  border-color: var(--accent-red);
+}
+.btn-secondary-hero:hover {
+  background: var(--accent-red-dark);
+  border-color: var(--accent-red-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--glow-red);
+}
+
+/* --- SHARED SECTION STYLING --- */
+.how-it-works, .about-snippet {
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border-glass);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 60px;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--accent-green);
+  border-radius: 2px;
+  margin: 10px auto 0;
+  box-shadow: var(--glow-green);
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step-card {
+  flex-basis: 300px;
+  flex-grow: 1;
+  padding: 35px 30px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.step-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-green);
+  box-shadow: 0 0 40px rgba(var(--accent-green-rgb), 0.2);
+}
+
+.step-icon {
+  font-size: 3.5rem;
+  color: var(--accent-green);
+  margin-bottom: 25px;
+  text-shadow: var(--glow-green);
+}
+
+.step-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+.step-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-snippet {
+  background: var(--bg-glass);
+}
+.about-snippet-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about-snippet p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,94 @@
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Glassmorphism Profile Card */
+.profile-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-lg);
+}
+
+.profile-card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.profile-card-title svg {
+  color: var(--accent-green);
+  font-size: 1.5rem;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  background: rgba(0,0,0,0.2);
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-glass);
+  border-left: 4px solid var(--accent-green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.history-item:hover {
+  transform: translateX(5px);
+  border-color: var(--accent-red);
+  background: rgba(0,0,0,0.3);
+}
+
+.item-type {
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: capitalize;
+  flex-basis: 100px;
+}
+
+.item-detail {
+  color: var(--text-muted);
+  flex-grow: 1;
+}
+
+.item-date {
+  color: var(--accent-green);
+  font-size: 0.9rem;
+}
+
+.no-items {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+.no-items a {
+  color: var(--accent-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+.no-items a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}

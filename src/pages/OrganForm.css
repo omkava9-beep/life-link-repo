@@ -1,0 +1,60 @@
+.organ-form-card {
+  max-width: 900px;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-glass);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.checkbox-group label:hover {
+  color: var(--text-light);
+}
+
+.checkbox-group input {
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: var(--accent-green);
+  cursor: pointer;
+}
+
+.notes {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 30px;
+  background: rgba(var(--accent-blue-rgb), 0.1);
+  padding: 20px;
+  border-left: 5px solid var(--accent-blue);
+  border-radius: 8px;
+}
+.notes b {
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .checkbox-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+}
