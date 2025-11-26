@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // The base URL for your backend server
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://life-link-repo-1.onrender.com/api';
 
 // Create an instance of axios
 const api = axios.create({
