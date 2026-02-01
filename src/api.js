@@ -3,8 +3,8 @@ import axios from 'axios';
 // Determine API URL based on environment
 const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 const API_URL = isDevelopment
-  ? 'https://life-link-frontend.onrender.com/api'
-  : import.meta.env.VITE_API_URL || 'https://life-link-frontend.onrender.com/api';
+  ? 'https://life-link-backend-n8l1.onrender.com/api'
+  : 'https://life-link-backend-n8l1.onrender.com/api';
 
 console.log('API URL:', API_URL);
 
