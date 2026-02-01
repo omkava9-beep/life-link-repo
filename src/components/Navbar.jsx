@@ -6,7 +6,7 @@ import './Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const { isLoggedIn, user, logout } = useAuth();
+  const { isLoggedIn, user, logout, loading } = useAuth();
   const navigate = useNavigate();
 
   const handleClick = () => setClick(!click);
@@ -17,6 +17,20 @@ function Navbar() {
     closeMobileMenu();
     navigate('/');
   };
+
+  // Show loading state while checking authentication
+  if (loading) {
+    return (
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo">
+            <FaHeartbeat className="navbar-icon" />
+            LifeLink
+          </Link>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="navbar">

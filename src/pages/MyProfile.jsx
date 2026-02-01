@@ -8,7 +8,7 @@ import PageLayout from '../components/PageLayout';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function MyProfile() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const [myDonations, setMyDonations] = useState([]);
   const [myRequests, setMyRequests] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,6 +16,8 @@ function MyProfile() {
 
   useEffect(() => {
     const fetchData = async () => {
+      if (authLoading) return; // Wait for auth to load
+      
       if (!user) {
         setError('You must be logged in to view this page.');
         setLoading(false);
@@ -42,8 +44,24 @@ function MyProfile() {
     fetchData();
   }, [user]);
 
+  if (authLoading) {
+    return (
+      <PageLayout>
+        <div className="page-container fade-in-on-load">
+          <h1 className="page-title">Loading...</h1>
+        </div>
+      </PageLayout>
+    );
+  }
+
   if (loading) {
-    return <div className="page-container fade-in-on-load"><h1 className="page-title">Loading Profile...</h1></div>;
+    return (
+      <PageLayout>
+        <div className="page-container fade-in-on-load">
+          <h1 className="page-title">Loading Profile...</h1>
+        </div>
+      </PageLayout>
+    );
   }
 
   return (
