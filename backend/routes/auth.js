@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const authMiddleware = require('../middleware/authMiddleware');
 
 // --- REGISTER ---
 router.post('/register', async (req, res) => {
@@ -53,6 +54,28 @@ router.post('/login', async (req, res) => {
 
     res.header('auth-token', token).json({
       token: token,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email
+      }
+    });
+
+  } catch (err) {
+    res.status(500).json({ error: 'Server error: ' + err.message });
+  }
+});
+
+// --- VALIDATE TOKEN ---
+router.get('/validate-token', authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found." });
+    }
+
+    res.status(200).json({
+      valid: true,
       user: {
         _id: user._id,
         name: user.name,

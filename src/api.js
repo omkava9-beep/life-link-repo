@@ -1,7 +1,12 @@
 import axios from 'axios';
 
-// The base URL for your backend server
-const API_URL = 'http://localhost:5000/api';
+// Determine API URL based on environment
+const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_URL = isDevelopment
+  ? 'http://localhost:5000/api'
+  : import.meta.env.VITE_API_URL || 'https://your-backend.onrender.com/api';
+
+console.log('API URL:', API_URL);
 
 // Create an instance of axios
 const api = axios.create({
